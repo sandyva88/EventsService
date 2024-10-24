@@ -18,7 +18,6 @@ public interface EventsRepository extends JpaRepository<Events, Integer> {
     @Query("SELECT e.idEvent, e.title, SUBSTRING(e.content, 1, 180), e.imageUrl FROM Events e")
     Page<Events> findMin(Pageable pageable);
 
-
-    @Query("SELECT e.idEvent, e.title, e.imageUrl FROM Events e Where e.title LIKE %:title%")
+    @Query("SELECT e FROM Events e Where e.title LIKE %:title%")
     List<Events> findByTitleMin(String title);
 }

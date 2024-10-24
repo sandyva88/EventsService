@@ -1,7 +1,6 @@
 package com.activehub.eventsService.controllers;
 
 
-import com.activehub.eventsService.models.database.Events;
 import com.activehub.eventsService.models.events.requests.CreateEventRequest;
 import com.activehub.eventsService.models.events.requests.GetPrincipalEventsRequest;
 import com.activehub.eventsService.models.ws.WSResponse;

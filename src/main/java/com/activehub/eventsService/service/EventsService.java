@@ -15,6 +15,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,9 +28,17 @@ public class EventsService {
     private CategoryRepository categoryRepository;
 
     public Events createEvent(CreateEventRequest req){
+
+        Category category = categoryRepository.findByName(req.getCategory());
+
         Events event = new Events();
         event.setTitle(req.getTitle());
         event.setContent(req.getContent());
+        event.setAddress(req.getAddress());
+        event.setCategory(category);
+        event.setImageUrl(req.getImageUrl());
+        event.setOrganizerId("1");
+        event.setCreationDate(new Date());
         eventsRepository.save(event);
         return event;
     }

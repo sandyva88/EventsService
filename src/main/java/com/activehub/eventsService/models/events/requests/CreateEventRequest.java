@@ -11,6 +11,7 @@ public class CreateEventRequest {
     private String category;
     private String address;
     private Double pricePerson;
+    private String imageUrl;
     private int minParticipants;
     private int maxParticipants;
 }
